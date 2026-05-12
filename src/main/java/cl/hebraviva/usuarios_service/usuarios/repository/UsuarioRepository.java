@@ -1,16 +1,16 @@
 package cl.hebraviva.usuarios_service.usuarios.repository;
 
 
+import cl.hebraviva.usuarios_service.usuarios.dto.UsuarioResponseDTO;
 import cl.hebraviva.usuarios_service.usuarios.entity.Usuario;
+
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.List;
-
-
+@Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
     
     boolean existsUsuarioByEmailUsuario(String emailUsuario);
-    Collection<Usuario> findUsuarioByEmailUsuario(String emailUsuario);
+    UsuarioResponseDTO findUsuarioByEmailUsuario(String emailUsuario);
 
 }
